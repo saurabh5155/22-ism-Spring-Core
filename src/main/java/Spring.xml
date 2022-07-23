@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-init-method="init1" default-destroy-method="destroy1">
+
+    <!-- bean definitions here -->
+
+	<bean class="com.controller.SignupController" id="SignupController"></bean>
+	
+	<bean class="com.bean.StudentBean" id="student" init-method="initMethod" destroy-method="destroyMethod">
+		<!-- <property name="firstname" value="Saurabh"></property>
+		<property name="lastName" value="patel"></property> -->
+	</bean>
+	
+	<bean class="com.bean.UserBean" id="user"></bean>
+</beans>
