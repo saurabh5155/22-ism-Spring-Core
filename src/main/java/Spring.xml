@@ -26,4 +26,9 @@
 		<constructor-arg ref="address"></constructor-arg>
 		<property name="docName" value="Dr. Saurabh Patel"></property>
 	</bean>
+	
+	<bean class="com.bean.Address2Bean" id="address2"></bean>
+	<bean class="com.bean.PatientBean" id="patient">
+		<property name="address2Bean" ref="address2"></property>
+	</bean>
 </beans>

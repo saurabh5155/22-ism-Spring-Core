@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.bean.DoctorBean;
 import com.bean.EmployeeBean;
+import com.bean.PatientBean;
 import com.bean.StudentBean;
 import com.bean.UserBean;
 import com.controller.SignupController;
@@ -41,8 +42,15 @@ public class App {
 		
 //		Doctor & Address Constructor DI
 		DoctorBean doctorBean =(DoctorBean) context.getBean("doctor");
-		System.out.println(doctorBean.getDocName());
+		System.out.println("Doctor Name ->"+doctorBean.getDocName());
 		System.out.println("------------------------------------------------------------------------");
+
+//		Patient & Address2 Setter DI
+		PatientBean patientBean =(PatientBean) context.getBean("patient");
+		System.out.println("Patient ->"+patientBean.getPtName());
+		System.out.println("------------------------------------------------------------------------");
+
+		
 		
 		context.registerShutdownHook();
 	}
