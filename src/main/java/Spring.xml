@@ -19,4 +19,11 @@
 	<bean class="com.bean.UserBean" id="user"></bean>
 	
 	<bean class="com.bean.EmployeeBean" id="employee"></bean>
+	
+	<bean class="com.bean.AddressBean" id="address"></bean>
+	
+	<bean class="com.bean.DoctorBean" id="doctor">
+		<constructor-arg ref="address"></constructor-arg>
+		<property name="docName" value="Dr. Saurabh Patel"></property>
+	</bean>
 </beans>

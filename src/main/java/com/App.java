@@ -1,7 +1,9 @@
 package com;
 
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.bean.DoctorBean;
 import com.bean.EmployeeBean;
 import com.bean.StudentBean;
 import com.bean.UserBean;
@@ -15,7 +17,7 @@ public class App {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Spring.xml");
-//        System.out.println("ClassPathXmlApplicationContext -->"+context);
+        System.out.println("ClassPathXmlApplicationContext -->"+context);
 
 		SignupController sc = (SignupController) context.getBean("SignupController");
 //        UserBean
@@ -36,6 +38,12 @@ public class App {
 		System.out.println("Employee Surname ->" + employeeBean.getEmpSurName());
 		System.out.println("Employee Number ->" + employeeBean.getEmpNum());
 		System.out.println("------------------------------------------------------------------------");
+		
+//		Doctor & Address Constructor DI
+		DoctorBean doctorBean =(DoctorBean) context.getBean("doctor");
+		System.out.println(doctorBean.getDocName());
+		System.out.println("------------------------------------------------------------------------");
+		
 		context.registerShutdownHook();
 	}
 }
