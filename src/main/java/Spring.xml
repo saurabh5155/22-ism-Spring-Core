@@ -17,4 +17,6 @@
 	</bean>
 	
 	<bean class="com.bean.UserBean" id="user"></bean>
+	
+	<bean class="com.bean.EmployeeBean" id="employee"></bean>
 </beans>
